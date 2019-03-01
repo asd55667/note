@@ -1,4 +1,3 @@
-# U-Net: Convolutional Networks for Biomedical Image Segmentation
 修改自FCN(Fully Convolutional Nerwork) 用upsampling取代pooling,
 
 像素级分类
@@ -8,6 +7,7 @@
 + overlap-tile策略, 支持任意大小的无缝分割
 - 用elastic deformation, 有足够多的数据增强, 能学习到图片的Invariance
 + 加权损失, 权重偏向背景与细胞交界处的labels
+## 网络结构
 >contracting path
 
 | Type        | patch_size/stride |  input_size       |  
@@ -44,4 +44,14 @@
 | Type          | patch_size/stride |input_size (+output_cropped) |
 >expansive path
 
-$ x=\frac{-b\pm\sqrt{b^2-4ac}}{2a} $
+
+## 参数
+Activation: ReLU
+Momentum: 0.99
+Optimizer: SGD
+Energy Function: pixel-wise softmax + final feature map conbined with CE
+Weight Function: $w(x) = w_c(x) + w_0\exp(-\frac{(d_1(x) + d_2(x)^2}{ 2\sigma^2})$
+$w_0 = 10$, $\sigma\approx5$
+
+## 应用领域
+生物医学分割
