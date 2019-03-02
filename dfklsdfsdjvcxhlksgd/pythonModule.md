@@ -16,5 +16,18 @@ a.scope   # 'block1'
 a.unit_fn # bottleneck
 ```
 
+# multiprocessing
+## pool
+
+```
+from multiprocessing.pool import Pool
+process_num = 24
+P = Pool(process_num)
+p.apply_async(fn, args(**fn_args))
+p.close()
+p.join()
+```
+
+
 
 
