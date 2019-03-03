@@ -12,3 +12,5 @@ tfe.enable_eager_execution()
 ### tf.map_fn
 跟lambda 函数类似
 map_fn(fn, elems, dtype)
+
+
