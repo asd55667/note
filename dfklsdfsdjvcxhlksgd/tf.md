@@ -49,26 +49,3 @@ FLAGS = flags.FLAGS     #可实例化这个解析参数的类从对应的命令�
 用法 python filename.py --data_dir 'directory'  --batch_size 128
 
 
-
-### tfrecord
->tf.train.feature
-```
-def int64_feature(value):
-    return tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))
-```
->tf.train.Example
-+ tf.gfile.GFile
-```
-with tf.gfile.GFile(path, 'rb') as file:
-    data = file.read()
-```
-+ io.BytesIO
-+ extract feature
-> generate tfrecord
-+ tf.python_io.TFRecordWriter
-+ glob.glob
-+ tf.Example.SerializeToString
-+ writer.close
-
-
-
