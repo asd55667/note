@@ -1,3 +1,15 @@
+# argparse
+命令行参数parse
+```
+parser = argparse.ArgumentParser()
+parser.add_argument('--arg', param, type)
+args = parser.parse_args()
+args.param
+```
+```
+$python file.py --arg custom param
+```
+
 # glob
 实现对目录内容进行匹配的功能,
 glob.glob(path, recursive)  #与os.listdir类似
