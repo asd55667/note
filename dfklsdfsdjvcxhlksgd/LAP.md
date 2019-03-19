@@ -11,5 +11,5 @@
 + Jonker volgenant, O(n^3) 比 Hungarian快
 + Random, O(n), 不能保证结果最优
 
-在kaggle鲸尾匹配中![Siamese网络](https://www.kaggle.com/martinpiotte/whale-recognition-model-with-score-0-78563)中所用到的方法, 将注意力集中在不匹配的且相似度高的样本上, 将lapjv搜索到的结果及对角线设为无穷大
+在kaggle鲸尾匹配中![Siamese网络](https://www.kaggle.com/martinpiotte/whale-recognition-model-with-score-0-78563)中所用到的方法, 为把注意力集中在不匹配的且相似度高的样本上, 将lapjv搜索到的结果及对角线设为无穷大, ![参考](https://www.kaggle.com/suicaokhoailang/linear-assignment-problem-and-how-it-applies)
 ![](./imgs/LAP.png)

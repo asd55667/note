@@ -1,4 +1,13 @@
-
+# custom python package
+在dir下编辑__init__.py文件, 
+```
+# __init__.py
+from .filename import func
+```
+之后可从dir直接import dir里子文件的函数
+```
+from dir import func
+```
 
 # re
 ```

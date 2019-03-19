@@ -90,3 +90,27 @@ def kth(self, a, b, k):
 将数组A,B以中位数划分为A1,A2, B1,B2, 当A的中位数比B的大时, A2一定在数组C={A,B}的最右侧, C的中位数左侧的数只会在A1,B1,B2之中, 递归去掉两端的数
 
 # 5. Longest Palindromic Substring
+```
+def longestPalindrome(self, s):
+    res = ""
+    for i in range(len(s)):
+        # odd case, like "aba"
+        tmp = self.helper(s, i, i)
+        if len(tmp) > len(res):
+            res = tmp
+        # even case, like "abba"
+        tmp = self.helper(s, i, i+1)
+        if len(tmp) > len(res):
+            res = tmp
+    return res
+ 
+# get the longest palindrome, l, r are the middle indexes   
+# from inner to outer
+def helper(self, s, l, r):
+    while l >= 0 and r < len(s) and s[l] == s[r]:
+        l -= 1; r += 1
+    return s[l+1:r]
+```
+helper函数搜寻回文, 回文的特点是轴对称, 若目标为奇数,则从中心点出发检测两端是否相等, l=r, 偶数则是中间的一对
+
+
