@@ -113,4 +113,23 @@ def helper(self, s, l, r):
 ```
 helper函数搜寻回文, 回文的特点是轴对称, 若目标为奇数,则从中心点出发检测两端是否相等, l=r, 偶数则是中间的一对
 
+# 6. ZigZag Conversion
+```
+    def convert(self, s, numRows):
+        if numRows == 1 or numRows >= len(s):
+            return s
+
+        L = [''] * numRows
+        index, step = 0, 1
+
+        for x in s:
+            L[index] += x
+            if index == 0:
+                step = 1
+            elif index == numRows -1:
+                step = -1
+            index += step
+
+        return ''.join(L)
+```
 

@@ -1,3 +1,43 @@
+# itertools
+## zip_longest
+```
+def zip_longest(*it, **kwargs):
+	its = {k: len(k) for k in it}   # 用字典把参数对象和参数的元素个数结果作为一个字典
+	max_num = max(its.values())    # 确定迭代对象元素最大值 
+	result = []            # 
+	fillvalue = kwargs.get('fillvalue', None) # 元素较少的填充值
+	for x in range(max_num):     # 已最大次为基准循环
+	result = []
+	for it in its:        # 循环所有迭代对象,以便进行填充数据
+		element = list(it)    # 将
+		if len(it) < max_num:   # 如果迭代对象的元素个数比最大值小,则要填充数据
+		for i in range(max_num - len(it)): # 此为要填充数据的个数
+			element.append(fillvalue)    # 填充操作,完成后所有的迭代对象的元素个数都为一致    
+		result.append(element[x])        # 生成一一对应结果，存放到list中
+	yield tuple(result)             # 将结果输出	
+```
+```
+a = ['a','b','c'], b = ['x','y','z','k']
+for i in zip_longest(a, b):
+	print(i)
+#['a','x'], ['b', 'y'], ['c','z'], [None, 'k']
+
+for i in zip(a,b):
+	print(i)
+# ['a','x'], ['b','y'],['c','z']
+```
+## permutation
+排列
+## conbination
+组合
+## chain
+连接两个可iter的对象, 可不同类型
+## islice
+对generator切片
+## dropwhile
+设定drop条件, 丢弃generator在条件内的内容, 不满足条件终止,
+
+
 # custom python package
 在dir下编辑__init__.py文件, 
 ```
